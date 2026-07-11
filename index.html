@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- =========================================================
+         FUTURA PLANTILLA FLASK: base.html
+         Este bloque <head> sería compartido por todas las páginas.
+         ========================================================= -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta name="description" content="Proyecto web interactivo Jorge Tech con HTML5, CSS3, Bootstrap y JavaScript.">
+    <meta
+        name="description"
+        content="Jorge Tech: proyecto web organizado como futura estructura de plantillas Flask."
+    >
     <title>Jorge Tech | Servicios tecnológicos</title>
 
     <!-- Bootstrap 5 mediante CDN -->
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-        crossorigin="anonymous"
     >
 
     <!-- Hoja de estilos externa -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-    <!-- Menú responsivo -->
+<body>
+    <!-- =========================================================
+         FUTURA PLANTILLA FLASK: base.html
+         INICIO DEL CONTENIDO COMÚN DE TODAS LAS PÁGINAS
+         ========================================================= -->
+
+    <!-- FUTURO COMPONENTE REUTILIZABLE: templates/partials/navbar.html -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#inicio">Jorge Tech</a>
@@ -49,7 +59,7 @@
                         <a class="nav-link" href="#servicios">Servicios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#registro">Registro dinámico</a>
+                        <a class="nav-link" href="#registro">Solicitudes</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#video">Video</a>
@@ -62,43 +72,67 @@
         </div>
     </nav>
 
-    <!-- Encabezado principal -->
+    <!-- FUTURO COMPONENTE REUTILIZABLE: templates/partials/header.html -->
     <header id="inicio" class="hero text-center">
         <div class="container">
-            <p class="text-uppercase fw-semibold mb-2">Tecnología al alcance de todos</p>
+            <p class="text-uppercase fw-semibold mb-2">
+                Tecnología al alcance de todos
+            </p>
+
             <h1 class="display-4 fw-bold">Jorge Tech</h1>
+
             <p class="lead mx-auto mt-3 hero-description">
                 Soluciones tecnológicas, soporte técnico y redes para hogares,
                 estudiantes y pequeños negocios.
             </p>
 
             <div class="mt-4">
-                <a href="#servicios" class="btn btn-primary btn-lg m-2">Ver servicios</a>
-                <a href="#registro" class="btn btn-outline-light btn-lg m-2">Registrar solicitud</a>
+                <a href="#servicios" class="btn btn-primary btn-lg m-2">
+                    Ver servicios
+                </a>
+                <a href="#registro" class="btn btn-outline-light btn-lg m-2">
+                    Registrar solicitud
+                </a>
             </div>
         </div>
     </header>
 
+    <!-- =========================================================
+         FUTURO BLOQUE DE FLASK:
+         {% block content %} ... {% endblock %}
+         Cada página podría reemplazar únicamente este contenido.
+         ========================================================= -->
     <main>
-        <!-- Presentación -->
+        <!-- FUTURA PLANTILLA: templates/inicio.html -->
         <section class="section-space bg-light">
             <div class="container">
                 <div class="row align-items-center g-4">
                     <article class="col-lg-7">
+                        <span class="badge text-bg-primary mb-3">
+                            Proyecto preparado para Flask
+                        </span>
+
                         <h2 class="section-title">Inicio</h2>
+
                         <p>
-                            Jorge Tech es un proyecto web orientado a ofrecer servicios tecnológicos
-                            de manera clara, confiable y accesible. La página presenta soluciones
-                            relacionadas con mantenimiento de equipos, instalación de redes, soporte
-                            técnico, asesoría tecnológica y venta de accesorios.
+                            Jorge Tech es un proyecto web orientado a ofrecer
+                            servicios tecnológicos de manera clara, confiable
+                            y accesible. La interfaz está organizada en bloques
+                            reutilizables para facilitar una futura integración
+                            con plantillas de Flask.
                         </p>
+
                         <p>
-                            En esta nueva versión se incorpora una funcionalidad dinámica desarrollada
-                            con JavaScript. El usuario puede registrar solicitudes de servicio,
-                            visualizarlas inmediatamente, conocer el total de registros y eliminar
-                            los elementos que ya no necesite, sin recargar la página.
+                            El encabezado, la navegación, el contenido principal
+                            y el pie de página se encuentran identificados mediante
+                            comentarios. El contenido repetitivo se genera desde
+                            JavaScript utilizando arreglos, objetos y estructuras
+                            de repetición.
                         </p>
-                        <a href="#registro" class="btn btn-primary">Probar la aplicación</a>
+
+                        <a href="#registro" class="btn btn-primary">
+                            Probar contenido dinámico
+                        </a>
                     </article>
 
                     <div class="col-lg-5 text-center">
@@ -112,7 +146,7 @@
             </div>
         </section>
 
-        <!-- Quiénes somos -->
+        <!-- FUTURA PLANTILLA: templates/quienes_somos.html -->
         <section id="quienes-somos" class="section-space">
             <div class="container">
                 <div class="row align-items-center g-4">
@@ -126,114 +160,97 @@
 
                     <article class="col-lg-7">
                         <h2 class="section-title">Quiénes Somos</h2>
+
                         <p>
-                            Jorge Tech es un emprendimiento tecnológico creado con el propósito de brindar
-                            apoyo a personas, estudiantes, hogares y pequeños negocios que necesitan soluciones
-                            prácticas en el uso de equipos informáticos y redes. El proyecto ayuda en la instalación,
-                            configuración, mantenimiento y revisión de computadoras, impresoras, cámaras de seguridad,
-                            routers y otros dispositivos de uso cotidiano. También ofrece orientación al cliente con
-                            un lenguaje sencillo, para que pueda comprender el problema y la solución aplicada.
-                            La finalidad de esta página web es presentar los servicios disponibles, facilitar el
-                            contacto con los usuarios y mostrar una imagen profesional del emprendimiento.
-                            Jorge Tech busca ofrecer una atención responsable, puntual y de calidad, aprovechando
-                            la importancia de la tecnología en la educación, el trabajo y la comunicación actual.
+                            Jorge Tech es un emprendimiento tecnológico creado
+                            para brindar apoyo a personas, estudiantes, hogares
+                            y pequeños negocios que necesitan soluciones prácticas
+                            en el uso de equipos informáticos y redes. El proyecto
+                            ofrece instalación, configuración, mantenimiento y
+                            revisión de computadoras, impresoras, cámaras de
+                            seguridad, routers y otros dispositivos de uso cotidiano.
+                        </p>
+
+                        <p>
+                            La página utiliza una estructura modular que identifica
+                            los componentes que posteriormente podrían separarse
+                            como archivos de plantilla en Flask, evitando duplicar
+                            el encabezado, el menú y el pie de página.
                         </p>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- Servicios -->
+        <!-- =====================================================
+             CONTENIDO DINÁMICO:
+             En Flask podría recibirse como una lista desde Python
+             y recorrerse con: {% for servicio in servicios %}
+             Por ahora se renderiza desde script.js.
+             ===================================================== -->
         <section id="servicios" class="section-space bg-light">
             <div class="container">
-                <h2 class="section-title text-center">Servicios o Productos</h2>
-                <p class="text-center mb-5">
-                    Servicios tecnológicos diseñados para necesidades personales, educativas y comerciales.
-                </p>
-
-                <div class="row g-4">
-                    <article class="col-md-6 col-lg-4">
-                        <div class="card service-card p-3 h-100">
-                            <div class="card-body text-center">
-                                <div class="service-icon" aria-hidden="true">💻</div>
-                                <h3 class="card-title h5">Soporte técnico</h3>
-                                <p class="card-text">
-                                    Mantenimiento preventivo y correctivo de equipos de computación.
-                                </p>
-                                <ul class="text-start">
-                                    <li>Limpieza de equipos.</li>
-                                    <li>Instalación de programas.</li>
-                                    <li>Revisión de fallas.</li>
-                                </ul>
-                                <a href="#registro" class="btn btn-primary">Solicitar</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="col-md-6 col-lg-4">
-                        <div class="card service-card p-3 h-100">
-                            <div class="card-body text-center">
-                                <div class="service-icon" aria-hidden="true">📡</div>
-                                <h3 class="card-title h5">Redes y conectividad</h3>
-                                <p class="card-text">
-                                    Configuración de redes para mejorar la conexión de hogares y negocios.
-                                </p>
-                                <ul class="text-start">
-                                    <li>Configuración de routers.</li>
-                                    <li>Instalación de repetidores Wi-Fi.</li>
-                                    <li>Revisión de Internet.</li>
-                                </ul>
-                                <a href="#registro" class="btn btn-primary">Consultar</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="col-md-6 col-lg-4">
-                        <div class="card service-card p-3 h-100">
-                            <div class="card-body text-center">
-                                <div class="service-icon" aria-hidden="true">🔌</div>
-                                <h3 class="card-title h5">Productos tecnológicos</h3>
-                                <p class="card-text">
-                                    Venta y asesoría de accesorios tecnológicos para uso diario.
-                                </p>
-                                <ul class="text-start">
-                                    <li>Cables de red.</li>
-                                    <li>Mouse y teclados.</li>
-                                    <li>Adaptadores y accesorios.</li>
-                                </ul>
-                                <a href="#registro" class="btn btn-primary">Ver más</a>
-                            </div>
-                        </div>
-                    </article>
+                <div class="text-center mb-5">
+                    <span class="badge text-bg-success mb-3">
+                        Datos generados desde JavaScript
+                    </span>
+                    <h2 class="section-title">Servicios o Productos</h2>
+                    <p>
+                        Las tarjetas no están repetidas manualmente en el HTML.
+                        Se crean a partir de un arreglo de objetos.
+                    </p>
                 </div>
+
+                <!-- JavaScript insertará aquí las tarjetas -->
+                <div id="listaServicios" class="row g-4"></div>
             </div>
         </section>
-        <!-- Sección dinámica con validaciones en tiempo real -->
+
+        <!-- FUTURA PLANTILLA: templates/solicitudes.html -->
         <section id="registro" class="section-space">
             <div class="container">
                 <div class="text-center mb-5">
-                    <span class="badge text-bg-success mb-3">JavaScript + DOM + Bootstrap</span>
-                    <h2 class="section-title">Registro dinámico de solicitudes</h2>
+                    <span class="badge text-bg-primary mb-3">
+                        Formulario dinámico
+                    </span>
+
+                    <h2 class="section-title">
+                        Registro de solicitudes tecnológicas
+                    </h2>
+
                     <p>
-                        Complete el formulario para registrar una solicitud. Los campos se validan
-                        mientras escribe y los datos aparecen sin recargar el navegador.
+                        Los datos se validan en tiempo real y se muestran
+                        sin recargar el navegador.
                     </p>
                 </div>
 
                 <div class="row g-4">
                     <div class="col-lg-5">
-                        <form id="formularioSolicitud" class="dynamic-form p-4" novalidate>
+                        <form
+                            id="formularioSolicitud"
+                            class="dynamic-form p-4"
+                            novalidate
+                        >
                             <h3 class="h4 mb-2">Nueva solicitud</h3>
+
                             <p class="text-secondary small mb-4">
                                 Todos los campos son obligatorios.
                             </p>
 
-                            <div id="mensajeValidacion" class="mb-3" aria-live="polite"></div>
+                            <div
+                                id="mensajeValidacion"
+                                class="mb-3"
+                                aria-live="polite"
+                            ></div>
 
                             <div class="mb-3">
-                                <label for="nombreSolicitud" class="form-label">
+                                <label
+                                    for="nombreSolicitud"
+                                    class="form-label"
+                                >
                                     Nombre del cliente
                                 </label>
+
                                 <input
                                     type="text"
                                     class="form-control"
@@ -242,22 +259,31 @@
                                     minlength="3"
                                     maxlength="60"
                                     autocomplete="name"
-                                    aria-describedby="ayudaNombre errorNombre exitoNombre"
                                     required
                                 >
-                                <div id="ayudaNombre" class="form-text">
+
+                                <div class="form-text">
                                     Debe contener al menos 3 caracteres.
                                 </div>
-                                <div id="errorNombre" class="invalid-feedback"></div>
-                                <div id="exitoNombre" class="valid-feedback">
+
+                                <div
+                                    id="errorNombre"
+                                    class="invalid-feedback"
+                                ></div>
+
+                                <div class="valid-feedback">
                                     Nombre válido.
                                 </div>
                             </div>
 
                             <div class="mb-3">
-                                <label for="descripcionSolicitud" class="form-label">
+                                <label
+                                    for="descripcionSolicitud"
+                                    class="form-label"
+                                >
                                     Descripción
                                 </label>
+
                                 <textarea
                                     class="form-control"
                                     id="descripcionSolicitud"
@@ -265,46 +291,106 @@
                                     placeholder="Describa el servicio o problema tecnológico"
                                     minlength="20"
                                     maxlength="250"
-                                    aria-describedby="contadorDescripcion errorDescripcion exitoDescripcion"
                                     required
                                 ></textarea>
+
                                 <div class="d-flex justify-content-between">
                                     <div class="form-text">
                                         Escriba al menos 20 caracteres.
                                     </div>
-                                    <div id="contadorDescripcion" class="form-text">
+                                    <div
+                                        id="contadorDescripcion"
+                                        class="form-text"
+                                    >
                                         0/250
                                     </div>
                                 </div>
-                                <div id="errorDescripcion" class="invalid-feedback"></div>
-                                <div id="exitoDescripcion" class="valid-feedback">
+
+                                <div
+                                    id="errorDescripcion"
+                                    class="invalid-feedback"
+                                ></div>
+
+                                <div class="valid-feedback">
                                     Descripción válida.
                                 </div>
                             </div>
 
                             <div class="mb-3">
-                                <label for="categoriaSolicitud" class="form-label">
-                                    Categoría o tipo
+                                <label
+                                    for="categoriaSolicitud"
+                                    class="form-label"
+                                >
+                                    Categoría
                                 </label>
+
                                 <select
                                     class="form-select"
                                     id="categoriaSolicitud"
-                                    aria-describedby="errorCategoria exitoCategoria"
                                     required
                                 >
-                                    <option value="">Seleccione una categoría</option>
-                                    <option value="Soporte técnico">Soporte técnico</option>
-                                    <option value="Redes y conectividad">Redes y conectividad</option>
-                                    <option value="Productos tecnológicos">Productos tecnológicos</option>
-                                    <option value="Asesoría">Asesoría</option>
+                                    <option value="">
+                                        Seleccione una categoría
+                                    </option>
+                                    <option value="Soporte técnico">
+                                        Soporte técnico
+                                    </option>
+                                    <option value="Redes y conectividad">
+                                        Redes y conectividad
+                                    </option>
+                                    <option value="Productos tecnológicos">
+                                        Productos tecnológicos
+                                    </option>
+                                    <option value="Asesoría">
+                                        Asesoría
+                                    </option>
                                 </select>
-                                <div id="errorCategoria" class="invalid-feedback"></div>
-                                <div id="exitoCategoria" class="valid-feedback">
-                                    Categoría seleccionada correctamente.
+
+                                <div
+                                    id="errorCategoria"
+                                    class="invalid-feedback"
+                                ></div>
+
+                                <div class="valid-feedback">
+                                    Categoría seleccionada.
                                 </div>
                             </div>
 
-                            <button type="submit" class="btn btn-primary w-100">
+                            <div class="mb-3">
+                                <label
+                                    for="estadoSolicitud"
+                                    class="form-label"
+                                >
+                                    Estado
+                                </label>
+
+                                <select
+                                    class="form-select"
+                                    id="estadoSolicitud"
+                                    required
+                                >
+                                    <option value="">
+                                        Seleccione un estado
+                                    </option>
+                                    <option value="Pendiente">Pendiente</option>
+                                    <option value="En proceso">En proceso</option>
+                                    <option value="Completado">Completado</option>
+                                </select>
+
+                                <div
+                                    id="errorEstado"
+                                    class="invalid-feedback"
+                                ></div>
+
+                                <div class="valid-feedback">
+                                    Estado seleccionado.
+                                </div>
+                            </div>
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary w-100"
+                            >
                                 Registrar solicitud
                             </button>
                         </form>
@@ -312,30 +398,46 @@
 
                     <div class="col-lg-7">
                         <div class="records-panel p-4">
-                            <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-4">
-                                <h3 class="h4 mb-0">Solicitudes registradas</h3>
+                            <div
+                                class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-4"
+                            >
+                                <h3 class="h4 mb-0">
+                                    Solicitudes registradas
+                                </h3>
+
                                 <span class="badge text-bg-primary fs-6">
-                                    Total: <span id="totalRegistros">0</span>
+                                    Total:
+                                    <span id="totalRegistros">0</span>
                                 </span>
                             </div>
 
-                            <div id="estadoVacio" class="alert alert-secondary text-center">
+                            <!-- Condición dinámica:
+                                 si no existen datos se muestra este mensaje -->
+                            <div
+                                id="estadoVacio"
+                                class="alert alert-secondary text-center"
+                            >
                                 Todavía no existen solicitudes registradas.
                             </div>
 
-                            <div id="listaSolicitudes" class="row g-3"></div>
+                            <!-- JavaScript renderiza aquí varios registros -->
+                            <div
+                                id="listaSolicitudes"
+                                class="row g-3"
+                            ></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Video -->
+        <!-- FUTURA PLANTILLA: templates/video.html -->
         <section id="video" class="section-space bg-light">
             <div class="container">
                 <h2 class="section-title text-center">Video relacionado</h2>
+
                 <p class="text-center">
-                    Video relacionado con tecnología y servicios informáticos.
+                    Contenido complementario relacionado con tecnología.
                 </p>
 
                 <div class="ratio ratio-16x9 video-box mt-4">
@@ -361,10 +463,12 @@
             </div>
         </section>
 
-        <!-- Información complementaria -->
+        <!-- FUTURO COMPONENTE: templates/partials/aside.html -->
         <div class="container my-5">
-            <aside class="p-3 m-3">
-                <h2 class="section-title">Información complementaria</h2>
+            <aside class="p-4">
+                <h2 class="section-title">
+                    Información complementaria
+                </h2>
 
                 <div class="row">
                     <div class="col-md-4">
@@ -374,18 +478,23 @@
 
                     <div class="col-md-4">
                         <strong>Promoción:</strong>
-                        <p>Diagnóstico básico sin costo en el primer contacto.</p>
+                        <p>
+                            Diagnóstico básico sin costo en el primer contacto.
+                        </p>
                     </div>
 
                     <div class="col-md-4">
                         <strong>Recomendación:</strong>
-                        <p>Explique claramente la falla antes de registrar la solicitud.</p>
+                        <p>
+                            Explique claramente la falla antes de registrar
+                            la solicitud.
+                        </p>
                     </div>
                 </div>
             </aside>
         </div>
 
-        <!-- Contacto -->
+        <!-- FUTURA PLANTILLA: templates/contacto.html -->
         <section id="contacto" class="section-space bg-light">
             <div class="container">
                 <h2 class="section-title text-center">Contacto</h2>
@@ -394,22 +503,39 @@
                     <article class="col-lg-5">
                         <div class="contact-box p-4 h-100">
                             <h3 class="h5">Medios de contacto</h3>
+
                             <p>
-                                Para solicitar información puede utilizar los siguientes medios:
+                                Para solicitar información puede utilizar
+                                los siguientes medios:
                             </p>
 
                             <p>
                                 <strong>Correo:</strong>
-                                <a href="mailto:manobanda908@gmail.com">manobanda908@gmail.com</a>
+                                <a href="mailto:manobanda908@gmail.com">
+                                    manobanda908@gmail.com
+                                </a>
                             </p>
+
                             <p>
                                 <strong>Teléfono:</strong>
-                                <a href="tel:+593987654321">+593 98 765 4321</a>
+                                <a href="tel:+593987654321">
+                                    +593 98 765 4321
+                                </a>
                             </p>
-                            <p><strong>Dirección:</strong> Quito, Ecuador</p>
+
+                            <p>
+                                <strong>Dirección:</strong>
+                                Quito, Ecuador
+                            </p>
 
                             <div class="d-flex flex-wrap gap-2 mt-4">
-                                <a class="btn btn-primary" href="mailto:manobanda908@gmail.com">Correo</a>
+                                <a
+                                    class="btn btn-primary"
+                                    href="mailto:manobanda908@gmail.com"
+                                >
+                                    Correo
+                                </a>
+
                                 <a
                                     class="btn btn-success"
                                     href="https://wa.me/593987654321"
@@ -418,6 +544,7 @@
                                 >
                                     WhatsApp
                                 </a>
+
                                 <a
                                     class="btn btn-outline-primary"
                                     href="https://www.facebook.com/"
@@ -431,14 +558,28 @@
                     </article>
 
                     <div class="col-lg-7">
-                        <form id="formularioContacto" class="contact-box p-4" novalidate>
+                        <form
+                            id="formularioContacto"
+                            class="contact-box p-4"
+                            novalidate
+                        >
                             <h3 class="h5 mb-3">Formulario de contacto</h3>
 
-                            <div id="mensajeContacto" class="mb-3" aria-live="polite"></div>
+                            <div
+                                id="mensajeContacto"
+                                class="mb-3"
+                                aria-live="polite"
+                            ></div>
 
                             <div class="row">
                                 <div class="col-md-6 mb-3">
-                                    <label for="nombreContacto" class="form-label">Nombre</label>
+                                    <label
+                                        for="nombreContacto"
+                                        class="form-label"
+                                    >
+                                        Nombre
+                                    </label>
+
                                     <input
                                         type="text"
                                         class="form-control"
@@ -448,7 +589,13 @@
                                 </div>
 
                                 <div class="col-md-6 mb-3">
-                                    <label for="correoContacto" class="form-label">Correo electrónico</label>
+                                    <label
+                                        for="correoContacto"
+                                        class="form-label"
+                                    >
+                                        Correo electrónico
+                                    </label>
+
                                     <input
                                         type="email"
                                         class="form-control"
@@ -459,7 +606,13 @@
                             </div>
 
                             <div class="mb-3">
-                                <label for="asuntoContacto" class="form-label">Asunto</label>
+                                <label
+                                    for="asuntoContacto"
+                                    class="form-label"
+                                >
+                                    Asunto
+                                </label>
+
                                 <input
                                     type="text"
                                     class="form-control"
@@ -469,7 +622,13 @@
                             </div>
 
                             <div class="mb-3">
-                                <label for="mensajeContactoTexto" class="form-label">Mensaje</label>
+                                <label
+                                    for="mensajeContactoTexto"
+                                    class="form-label"
+                                >
+                                    Mensaje
+                                </label>
+
                                 <textarea
                                     class="form-control"
                                     id="mensajeContactoTexto"
@@ -478,28 +637,47 @@
                                 ></textarea>
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+                            <button
+                                type="submit"
+                                class="btn btn-primary"
+                            >
+                                Enviar mensaje
+                            </button>
                         </form>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+    <!-- FIN DEL FUTURO BLOQUE: {% endblock %} -->
 
-    <footer class="text-center p-3">
-        <p class="mb-1"><strong>Estudiante:</strong> Jorge Manobanda</p>
-        <p class="mb-1"><strong>Asignatura:</strong> Desarrollo Web</p>
-        <p class="mb-0"><strong>Año:</strong> 2026</p>
+    <!-- FUTURO COMPONENTE REUTILIZABLE: templates/partials/footer.html -->
+    <footer class="text-center p-4">
+        <p class="mb-1">
+            <strong>Estudiante:</strong> Jorge Manobanda
+        </p>
+        <p class="mb-1">
+            <strong>Asignatura:</strong> Desarrollo Web
+        </p>
+        <p class="mb-0">
+            <strong>Año:</strong> 2026
+        </p>
     </footer>
+
+    <!-- FUTURO BLOQUE DE FLASK:
+         {% block scripts %} ... {% endblock %} -->
 
     <!-- JavaScript de Bootstrap -->
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"
     ></script>
 
     <!-- Archivo JavaScript externo -->
     <script src="script.js"></script>
+
+    <!-- =========================================================
+         FUTURA PLANTILLA FLASK: base.html
+         FIN DEL CONTENIDO COMÚN
+         ========================================================= -->
 </body>
 </html>
