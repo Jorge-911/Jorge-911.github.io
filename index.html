@@ -243,6 +243,19 @@
                                 aria-live="polite"
                             ></div>
 
+                            <!-- Spinner Bootstrap para simular proceso de registro -->
+                            <div
+                                id="spinnerRegistro"
+                                class="alert alert-info d-none align-items-center"
+                                role="alert"
+                            >
+                                <div
+                                    class="spinner-border spinner-border-sm me-2"
+                                    aria-hidden="true"
+                                ></div>
+                                <span>Registrando solicitud, espere un momento...</span>
+                            </div>
+
                             <div class="mb-3">
                                 <label
                                     for="nombreSolicitud"
@@ -388,6 +401,7 @@
                             </div>
 
                             <button
+                                id="botonRegistrar"
                                 type="submit"
                                 class="btn btn-primary w-100"
                             >
@@ -663,6 +677,76 @@
             <strong>Año:</strong> 2026
         </p>
     </footer>
+
+
+    <!-- Modal Bootstrap para visualizar información adicional -->
+    <div
+        class="modal fade"
+        id="modalDetalles"
+        tabindex="-1"
+        aria-labelledby="modalDetallesTitulo"
+        aria-hidden="true"
+    >
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h2 class="modal-title fs-5" id="modalDetallesTitulo">
+                        Detalles de la solicitud
+                    </h2>
+                    <button
+                        type="button"
+                        class="btn-close btn-close-white"
+                        data-bs-dismiss="modal"
+                        aria-label="Cerrar"
+                    ></button>
+                </div>
+                <div class="modal-body" id="modalDetallesContenido">
+                    <!-- JavaScript colocará aquí la información -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Bootstrap para confirmar eliminación -->
+    <div
+        class="modal fade"
+        id="modalConfirmarEliminar"
+        tabindex="-1"
+        aria-labelledby="modalConfirmarEliminarTitulo"
+        aria-hidden="true"
+    >
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h2 class="modal-title fs-5" id="modalConfirmarEliminarTitulo">
+                        Confirmar eliminación
+                    </h2>
+                    <button
+                        type="button"
+                        class="btn-close btn-close-white"
+                        data-bs-dismiss="modal"
+                        aria-label="Cerrar"
+                    ></button>
+                </div>
+                <div class="modal-body">
+                    ¿Está seguro de eliminar esta solicitud?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Cancelar
+                    </button>
+                    <button type="button" class="btn btn-danger" id="botonConfirmarEliminar">
+                        Sí, eliminar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- FUTURO BLOQUE DE FLASK:
          {% block scripts %} ... {% endblock %} -->
