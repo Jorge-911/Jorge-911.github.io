@@ -1,4 +1,8 @@
-/* Estilos generales */
+/* ==========================================================
+   JORGE TECH - ESTILOS PRINCIPALES
+   Proyecto organizado para una futura integración con Flask
+   ========================================================== */
+
 * {
     scroll-behavior: smooth;
 }
@@ -38,14 +42,18 @@ body {
     box-shadow: 0 5px 18px rgba(0, 0, 0, 0.16);
 }
 
-.service-card {
+.service-card,
+.request-card {
     border: none;
     border-radius: 18px;
     box-shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-.service-card:hover {
+.service-card:hover,
+.request-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
 }
@@ -63,11 +71,12 @@ body {
     box-shadow: 0 5px 18px rgba(0, 0, 0, 0.11);
 }
 
+.dynamic-form:focus-within {
+    box-shadow: 0 8px 24px rgba(29, 78, 216, 0.16);
+}
+
 .request-card {
-    border: 0;
     border-top: 5px solid #1d4ed8;
-    border-radius: 14px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.10);
 }
 
 .request-description {
@@ -94,7 +103,42 @@ footer {
     color: white;
 }
 
-/* Media query solicitada para pantallas pequeñas */
+/* Estados visuales de las validaciones */
+.form-control.is-valid,
+.form-select.is-valid,
+.form-control.is-invalid,
+.form-select.is-invalid {
+    border-width: 2px;
+}
+
+.valid-feedback,
+.invalid-feedback {
+    font-weight: 600;
+}
+
+#contadorDescripcion {
+    min-width: 55px;
+    text-align: right;
+}
+
+/* Animación para elementos renderizados desde JavaScript */
+.render-animation {
+    animation: aparecerElemento 0.35s ease;
+}
+
+@keyframes aparecerElemento {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Diseño responsivo para tablet y celular */
 @media (max-width: 768px) {
     .hero {
         padding: 60px 20px;
@@ -124,43 +168,39 @@ footer {
     }
 }
 
-/* Validaciones dinámicas de la Semana 6 */
-.form-control.is-valid,
-.form-select.is-valid {
-    border-width: 2px;
-}
-
-.form-control.is-invalid,
-.form-select.is-invalid {
-    border-width: 2px;
-}
-
-.valid-feedback,
-.invalid-feedback {
-    font-weight: 600;
-}
-
-#contadorDescripcion {
-    min-width: 55px;
-    text-align: right;
-}
-
-.dynamic-form:focus-within {
-    box-shadow: 0 8px 24px rgba(29, 78, 216, 0.16);
-}
-
-.record-animation {
-    animation: aparecerRegistro 0.35s ease;
-}
-
-@keyframes aparecerRegistro {
-    from {
-        opacity: 0;
-        transform: translateY(12px);
+@media (max-width: 576px) {
+    .records-panel .badge {
+        width: 100%;
+        padding: 10px;
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    .service-card,
+    .request-card {
+        border-radius: 14px;
+    }
+}
+
+
+/* Mejoras visuales de Bootstrap: modal, spinner y botones */
+#spinnerRegistro {
+    border-radius: 12px;
+}
+
+.modal-content {
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.btn {
+    border-radius: 10px;
+}
+
+.request-card .btn {
+    min-width: 110px;
+}
+
+@media (max-width: 576px) {
+    .request-card .btn {
+        width: 100%;
     }
 }
