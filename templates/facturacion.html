@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block title %}Facturación | Jorge Tech{% endblock %}
+{% block content %}
+<section class="section-space"><div class="container"><div class="text-center mb-5"><span class="badge text-bg-danger mb-3">Módulo /facturacion</span><h2 class="section-title">Facturación</h2><p>Interfaz visual básica para representar facturas de ejemplo.</p></div><div class="row g-4">{% for factura in facturas %}<article class="col-md-6 col-lg-4"><div class="card service-card h-100"><div class="card-body"><h3 class="card-title h5">{{ factura.numero }}</h3><p><strong>Cliente:</strong> {{ factura.cliente }}</p><p><strong>Detalle:</strong> {{ factura.detalle }}</p><p><strong>Total:</strong> ${{ "%.2f"|format(factura.total) }}</p>{% if factura.estado == "Pagada" %}<span class="badge text-bg-success">{{ factura.estado }}</span>{% else %}<span class="badge text-bg-warning">{{ factura.estado }}</span>{% endif %}</div></div></article>{% endfor %}</div><div class="alert alert-success mt-4">La ruta de facturación funciona correctamente usando datos de ejemplo.</div></div></section>
+{% endblock %}

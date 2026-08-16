@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block title %}Productos | Jorge Tech{% endblock %}
+{% block content %}
+<section class="section-space bg-light"><div class="container"><div class="text-center mb-5"><span class="badge text-bg-primary mb-3">Módulo /productos</span><h2 class="section-title">Gestión de productos</h2><p>Interfaz visual básica para representar productos tecnológicos disponibles.</p></div><div class="row g-4">{% for producto in productos %}<article class="col-md-6 col-lg-3"><div class="card service-card h-100"><div class="card-body"><span class="badge text-bg-dark mb-3">{{ producto.codigo }}</span><h3 class="card-title h5">{{ producto.nombre }}</h3><p class="mb-1"><strong>Categoría:</strong> {{ producto.categoria }}</p><p class="mb-1"><strong>Precio:</strong> ${{ "%.2f"|format(producto.precio) }}</p>{% if producto.estado == "Disponible" %}<span class="badge text-bg-success">{{ producto.estado }}</span>{% else %}<span class="badge text-bg-warning">{{ producto.estado }}</span>{% endif %}</div></div></article>{% endfor %}</div></div></section>
+{% endblock %}

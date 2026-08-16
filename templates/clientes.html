@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block title %}Clientes | Jorge Tech{% endblock %}
+{% block content %}
+<section class="section-space"><div class="container"><div class="text-center mb-5"><span class="badge text-bg-success mb-3">Módulo /clientes</span><h2 class="section-title">Clientes</h2><p>Registro visual de clientes y servicios solicitados.</p></div><div class="table-responsive contact-box p-3"><table class="table table-hover align-middle"><thead class="table-dark"><tr><th>Cliente</th><th>Servicio</th><th>Teléfono</th><th>Estado</th></tr></thead><tbody>{% for cliente in clientes %}<tr><td>{{ cliente.nombre }}</td><td>{{ cliente.servicio }}</td><td>{{ cliente.telefono }}</td><td>{% if cliente.estado == "Atendido" %}<span class="badge text-bg-success">{{ cliente.estado }}</span>{% elif cliente.estado == "En proceso" %}<span class="badge text-bg-warning">{{ cliente.estado }}</span>{% else %}<span class="badge text-bg-secondary">{{ cliente.estado }}</span>{% endif %}</td></tr>{% endfor %}</tbody></table></div><div class="alert alert-info mt-4">En esta semana se utilizan datos de ejemplo; no se requiere base de datos.</div></div></section>
+{% endblock %}

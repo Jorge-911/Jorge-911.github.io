@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block title %}Proveedores | Jorge Tech{% endblock %}
+{% block content %}
+<section class="section-space bg-light"><div class="container"><div class="text-center mb-5"><span class="badge text-bg-warning mb-3">Módulo /proveedores</span><h2 class="section-title">Proveedores</h2><p>Listado de proveedores relacionados con productos y servicios tecnológicos.</p></div><div class="row g-4">{% for proveedor in proveedores %}<article class="col-md-6 col-lg-4"><div class="card request-card h-100"><div class="card-body"><h3 class="card-title h5">{{ proveedor.empresa }}</h3><p><strong>Producto:</strong> {{ proveedor.producto }}</p><p><strong>Contacto:</strong> {{ proveedor.contacto }}</p><p><strong>Ciudad:</strong> {{ proveedor.ciudad }}</p><a class="btn btn-primary btn-sm" href="mailto:{{ proveedor.contacto }}">Contactar</a></div></div></article>{% endfor %}</div></div></section>
+{% endblock %}
