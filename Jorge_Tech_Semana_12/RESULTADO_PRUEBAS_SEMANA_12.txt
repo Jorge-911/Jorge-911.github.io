@@ -1,0 +1,30 @@
+Semana 12: verificación automatizada
+
+test_persistencia.py
+OK: datos inválidos y CSRF incorrecto no generan INSERT.
+OK: POST válido → INSERT → SELECT → tabla HTML; stock cero aceptado.
+OK: código duplicado rechazado por restricción UNIQUE.
+OK: SQL parametrizado guarda comillas como texto; dinero exacto en centavos.
+OK: rutas anteriores y formularios accesibles por HTTP.
+OK: segundo proceso Flask recupera los dos registros del primer proceso.
+OK: reinicializar CREATE TABLE IF NOT EXISTS conserva registros.
+Pruebas terminadas. La base entregada no fue modificada.
+
+test_formularios.py
+test_rutas_y_recursos (__main__.FormulariosTest.test_rutas_y_recursos) ... ok
+test_validaciones_y_csrf (__main__.FormulariosTest.test_validaciones_y_csrf) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.174s
+
+OK
+
+verificar.py
+OK HTTP y recursos: /
+OK HTTP y recursos: /productos
+OK HTTP y recursos: /clientes
+OK HTTP y recursos: /proveedores
+OK HTTP y recursos: /facturacion
+OK condiciones: disponible, agotado y lista vacía
+OK cinco páginas exportadas y sus enlaces/recursos locales
+Las dependencias externas (Bootstrap y YouTube) requieren Internet.

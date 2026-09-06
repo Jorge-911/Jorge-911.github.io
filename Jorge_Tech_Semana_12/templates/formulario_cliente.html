@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Registrar cliente | Jorge Tech{% endblock %}
+{% block content %}
+<section class="section-space"><div class="container formulario-contenedor">
+<h2 class="section-title">Registrar cliente</h2>
+<p>Complete los campos. Los registros se conservan hasta reiniciar la aplicación.</p>
+{% set volver = 'clientes' %}
+{% include "components/formulario.html" %}
+</div></section>
+{% endblock %}
