@@ -1,0 +1,8 @@
+OK HTTP y recursos: /
+OK HTTP y recursos: /productos
+OK HTTP y recursos: /clientes
+OK HTTP y recursos: /proveedores
+OK HTTP y recursos: /facturacion
+OK condiciones: disponible, agotado y lista vacía
+OK cinco páginas exportadas y sus enlaces/recursos locales
+Las dependencias externas (Bootstrap y YouTube) requieren Internet.
