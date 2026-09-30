@@ -1,0 +1,28 @@
+Pruebas de PostgreSQL y CRUD — Jorge Tech
+
+Fecha de validación: 29 de septiembre de 2026
+
+1. Conexión PostgreSQL
+OK: conexion/probar_conexion() devolvió conexión correcta.
+OK: sql/esquema.sql creó proveedores, clientes, productos y facturas.
+OK: se verificaron las relaciones proveedores -> productos y clientes -> facturas.
+
+2. test_persistencia.py
+OK: formulario protegido con token CSRF.
+OK: INSERT parametrizado registró un producto de prueba.
+OK: SELECT con WHERE comprobó el registro en PostgreSQL.
+OK: UPDATE ... WHERE modificó nombre, precio y stock.
+OK: DELETE ... WHERE eliminó únicamente el producto de prueba.
+OK: el registro temporal fue limpiado al finalizar la prueba.
+
+3. test_formularios.py
+OK: rutas, recursos estáticos, formularios y validaciones de clientes,
+proveedores y facturación siguen funcionando.
+
+4. Persistencia
+OK: Flask se inició, se detuvo y se inició nuevamente.
+OK: el listado mostró los productos iniciales antes y después del reinicio.
+OK: PostgreSQL mantuvo 2 productos de ejemplo tras el reinicio.
+
+Nota: las credenciales usadas para la validación local no forman parte del
+proyecto. Cada equipo debe configurar su propio archivo .env.

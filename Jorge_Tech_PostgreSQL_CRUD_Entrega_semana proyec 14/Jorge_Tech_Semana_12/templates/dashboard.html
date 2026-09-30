@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Panel de administración | Jorge Tech{% endblock %}
+{% block content %}
+<section class="section-space bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="badge text-bg-success mb-3">Sesión activa</span>
+      <h2 class="section-title">Bienvenido/a, {{ current_user.usuario }}</h2>
+      <p>Desde este panel puede acceder a los módulos administrativos protegidos.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3"><a class="card service-card h-100 text-decoration-none text-dark" href="{{ url_for('productos') }}"><div class="card-body text-center"><div class="service-icon">🖥️</div><h3 class="h5">Productos</h3><p class="mb-0">Inventario y CRUD.</p></div></a></div>
+      <div class="col-md-6 col-lg-3"><a class="card service-card h-100 text-decoration-none text-dark" href="{{ url_for('clientes') }}"><div class="card-body text-center"><div class="service-icon">👥</div><h3 class="h5">Clientes</h3><p class="mb-0">Servicios solicitados.</p></div></a></div>
+      <div class="col-md-6 col-lg-3"><a class="card service-card h-100 text-decoration-none text-dark" href="{{ url_for('proveedores') }}"><div class="card-body text-center"><div class="service-icon">🤝</div><h3 class="h5">Proveedores</h3><p class="mb-0">Contactos comerciales.</p></div></a></div>
+      <div class="col-md-6 col-lg-3"><a class="card service-card h-100 text-decoration-none text-dark" href="{{ url_for('facturacion') }}"><div class="card-body text-center"><div class="service-icon">🧾</div><h3 class="h5">Facturación</h3><p class="mb-0">Documentos de venta.</p></div></a></div>
+    </div>
+  </div>
+</section>
+{% endblock %}
