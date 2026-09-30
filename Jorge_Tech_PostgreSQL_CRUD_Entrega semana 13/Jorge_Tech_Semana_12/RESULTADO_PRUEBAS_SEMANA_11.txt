@@ -1,0 +1,17 @@
+test_rutas_y_recursos (__main__.FormulariosTest.test_rutas_y_recursos) ... ok
+test_validaciones_y_csrf (__main__.FormulariosTest.test_validaciones_y_csrf) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.214s
+
+OK
+
+Servidor iniciado con python app.py:
+OK HTTP y recursos: /
+OK HTTP y recursos: /productos
+OK HTTP y recursos: /clientes
+OK HTTP y recursos: /proveedores
+OK HTTP y recursos: /facturacion
+OK condiciones: disponible, agotado y lista vacía
+OK cinco páginas exportadas y sus enlaces/recursos locales
+Las dependencias externas (Bootstrap y YouTube) requieren Internet.

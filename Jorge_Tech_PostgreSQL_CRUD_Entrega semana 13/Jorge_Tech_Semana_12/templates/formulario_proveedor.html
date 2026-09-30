@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Registrar proveedor | Jorge Tech{% endblock %}
+{% block content %}
+<section class="section-space"><div class="container formulario-contenedor">
+<h2 class="section-title">Registrar proveedor</h2>
+<p>Complete los campos. Los registros se conservan hasta reiniciar la aplicación.</p>
+{% set volver = 'proveedores' %}
+{% include "components/formulario.html" %}
+</div></section>
+{% endblock %}
