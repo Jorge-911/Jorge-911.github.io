@@ -1,0 +1,206 @@
+/* ==========================================================
+   JORGE TECH - ESTILOS PRINCIPALES
+   Proyecto organizado para una futura integración con Flask
+   ========================================================== */
+
+* {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2f6fc;
+    color: #222;
+}
+
+.navbar {
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
+}
+
+.hero {
+    background: linear-gradient(135deg, #0f172a, #1d4ed8);
+    color: white;
+    padding: 95px 0;
+}
+
+.hero-description {
+    max-width: 760px;
+}
+
+.section-space {
+    padding: 70px 0;
+}
+
+.section-title {
+    color: #1d4ed8;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.img-tech {
+    border-radius: 18px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.16);
+}
+
+.service-card,
+.request-card {
+    border: none;
+    border-radius: 18px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.service-card:hover,
+.request-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: 12px;
+}
+
+.dynamic-form,
+.records-panel,
+.contact-box {
+    background-color: white;
+    border-radius: 18px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.11);
+}
+
+.dynamic-form:focus-within {
+    box-shadow: 0 8px 24px rgba(29, 78, 216, 0.16);
+}
+
+.request-card {
+    border-top: 5px solid #1d4ed8;
+}
+
+.request-description {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.video-box {
+    overflow: hidden;
+    border-radius: 18px;
+    background-color: #111827;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
+}
+
+aside {
+    background: linear-gradient(135deg, #dbeafe, #e0f2fe);
+    border-left: 8px solid #1d4ed8;
+    border-radius: 18px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.10);
+}
+
+footer {
+    background-color: #0f172a;
+    color: white;
+}
+
+/* Estados visuales de las validaciones */
+.form-control.is-valid,
+.form-select.is-valid,
+.form-control.is-invalid,
+.form-select.is-invalid {
+    border-width: 2px;
+}
+
+.valid-feedback,
+.invalid-feedback {
+    font-weight: 600;
+}
+
+#contadorDescripcion {
+    min-width: 55px;
+    text-align: right;
+}
+
+/* Animación para elementos renderizados desde JavaScript */
+.render-animation {
+    animation: aparecerElemento 0.35s ease;
+}
+
+@keyframes aparecerElemento {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Diseño responsivo para tablet y celular */
+@media (max-width: 768px) {
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .section-space {
+        padding: 45px 0;
+    }
+
+    .section-title {
+        text-align: center;
+    }
+
+    .hero .btn {
+        width: 100%;
+        margin: 6px 0 !important;
+    }
+
+    .dynamic-form,
+    .records-panel,
+    .contact-box {
+        padding: 20px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .records-panel .badge {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .service-card,
+    .request-card {
+        border-radius: 14px;
+    }
+}
+
+
+/* Mejoras visuales de Bootstrap: modal, spinner y botones */
+#spinnerRegistro {
+    border-radius: 12px;
+}
+
+.modal-content {
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.btn {
+    border-radius: 10px;
+}
+
+.request-card .btn {
+    min-width: 110px;
+}
+
+@media (max-width: 576px) {
+    .request-card .btn {
+        width: 100%;
+    }
+}

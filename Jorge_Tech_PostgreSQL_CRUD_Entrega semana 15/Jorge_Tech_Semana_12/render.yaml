@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: jorge-tech-flask
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: jorge-tech-postgres
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: AUTO_INIT_DB
+        value: "true"
+
+databases:
+  - name: jorge-tech-postgres
+    plan: free
+    databaseName: jorge_tech
+    user: jorge_tech_user

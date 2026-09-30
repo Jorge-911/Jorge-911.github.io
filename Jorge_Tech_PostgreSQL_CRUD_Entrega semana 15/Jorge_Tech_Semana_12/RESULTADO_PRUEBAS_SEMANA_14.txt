@@ -1,0 +1,22 @@
+Pruebas de autenticación — Jorge Tech
+
+Fecha de validación: 29 de septiembre de 2026
+
+OK: sql/esquema.sql creó la tabla usuarios en PostgreSQL.
+OK: registro creó un usuario mediante INSERT parametrizado.
+OK: el valor almacenado de password fue un hash y no la contraseña original.
+OK: contraseña incorrecta mostró un mensaje de rechazo.
+OK: contraseña correcta creó la sesión con Flask-Login.
+OK: dashboard mostró el nombre del usuario autenticado mediante current_user.
+OK: Productos, Clientes, Proveedores y Facturación redirigieron a /login
+    cuando no existía una sesión autenticada.
+OK: el usuario autenticado accedió a Productos y el CRUD continuó funcionando.
+OK: logout_user cerró la sesión y bloqueó nuevamente las rutas protegidas.
+
+Pruebas ejecutadas con éxito:
+python test_autenticacion.py
+python test_persistencia.py
+python test_formularios.py
+python verificar.py
+
+Nota: el usuario usado por las pruebas se eliminó automáticamente al terminar.

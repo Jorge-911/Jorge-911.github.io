@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Crear usuario | Jorge Tech{% endblock %}
+{% block content %}
+<section class="section-space">
+  <div class="container formulario-contenedor">
+    <div class="text-center mb-4">
+      <span class="badge text-bg-success mb-3">Registro de acceso</span>
+      <h2 class="section-title">Crear usuario</h2>
+      <p>La contraseña se guarda protegida mediante hash y nunca en texto plano.</p>
+    </div>
+    <form method="post" novalidate class="contact-box p-4">
+      {{ form.hidden_tag() }}
+      {% for campo in [form.usuario, form.password, form.confirmar_password] %}
+      <div class="mb-3">
+        {{ campo.label(class_="form-label") }}
+        {{ campo(class_="form-control" + (" is-invalid" if campo.errors else ""), autocomplete="new-password" if campo.name != "usuario" else "username") }}
+        {% for error in campo.errors %}<div class="invalid-feedback d-block">{{ error }}</div>{% endfor %}
+      </div>
+      {% endfor %}
+      {{ form.submit(class_="btn btn-success") }}
+      <a class="btn btn-outline-secondary" href="{{ url_for('login') }}">Ya tengo usuario</a>
+    </form>
+  </div>
+</section>
+{% endblock %}

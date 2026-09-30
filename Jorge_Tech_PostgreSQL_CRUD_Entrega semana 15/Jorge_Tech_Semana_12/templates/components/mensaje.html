@@ -1,0 +1,4 @@
+<div class="container mt-4"><p class="alert alert-info mb-0">Demostración académica · Datos ficticios · Avance {{ sistema.avance }}</p></div>
+{% with mensajes = get_flashed_messages(with_categories=true) %}
+{% for categoria, mensaje in mensajes %}<div class="container mt-3"><div class="alert alert-{{ categoria }}" role="status">{{ mensaje }}</div></div>{% endfor %}
+{% endwith %}

@@ -1,0 +1,20 @@
+<form method="POST" novalidate class="contact-box p-4">
+    {{ form.hidden_tag() }}
+    {% if form.csrf_token.errors %}
+    <div class="alert alert-danger" role="alert">La sesión del formulario venció o el token no es válido. Recargue la página e intente nuevamente.</div>
+    {% endif %}
+    {% for campo in form %}
+      {% if campo.type not in ['CSRFTokenField', 'HiddenField', 'SubmitField'] %}
+      <div class="mb-3">
+        {{ campo.label(class_="form-label") }}
+        {% set estilo = 'form-select' if campo.type == 'SelectField' else 'form-control' %}
+        {{ campo(class_=estilo + (' is-invalid' if campo.errors else ''), aria_describedby=campo.id ~ '-errores') }}
+        <div id="{{ campo.id }}-errores">
+        {% for error in campo.errors %}<div class="invalid-feedback d-block" role="alert">{{ error }}</div>{% endfor %}
+        </div>
+      </div>
+      {% endif %}
+    {% endfor %}
+    {{ form.submit(class_="btn btn-primary") }}
+    <a class="btn btn-outline-secondary" href="{{ url_for(volver) }}">Cancelar</a>
+</form>

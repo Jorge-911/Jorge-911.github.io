@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}{{ titulo_formulario }} | Jorge Tech{% endblock %}
+{% block content %}
+<section class="section-space"><div class="container formulario-contenedor">
+<h2 class="section-title">{{ titulo_formulario }}</h2>
+<p>Seleccione un cliente y complete los campos. La factura queda relacionada y almacenada en PostgreSQL.</p>
+{% include "components/formulario.html" %}
+</div></section>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}{{ titulo_formulario }} | Jorge Tech{% endblock %}
+{% block content %}
+<section class="section-space"><div class="container formulario-contenedor">
+<h2 class="section-title">{{ titulo_formulario }}</h2>
+<p>Complete los campos. La información se guarda de forma persistente en PostgreSQL.</p>
+{% include "components/formulario.html" %}
+</div></section>
+{% endblock %}

@@ -1,0 +1,24 @@
+Pruebas Semana 15 — CRUD PostgreSQL, Login y preparación Render
+
+Fecha de validación: 29 de septiembre de 2026
+
+OK: la base de datos contiene usuarios, proveedores, productos, clientes y facturas.
+OK: Productos y Facturación usan claves foráneas y consultas INNER JOIN.
+OK: Clientes, Proveedores, Productos y Facturación permiten crear, listar,
+    modificar y eliminar desde formularios protegidos.
+OK: todas las operaciones usan consultas SQL parametrizadas, commit y cierre de recursos.
+OK: Flask-Login mantiene protegidas las rutas administrativas.
+OK: registro, hash de contraseña, login, usuario actual y logout continúan funcionales.
+OK: AUTO_INIT_DB crea el esquema desde sql/esquema.sql con DATABASE_URL.
+OK: requirements.txt contiene Gunicorn y render.yaml inicia con gunicorn app:app.
+
+Pruebas ejecutadas correctamente:
+python test_autenticacion.py
+python test_persistencia.py
+python test_crud_modulos.py
+python test_formularios.py
+python verificar.py
+gunicorn --check-config app:app
+
+Pendiente del propietario de las cuentas: subir el repositorio a GitHub y crear
+el Blueprint en Render para obtener la URL pública final.
